@@ -1,0 +1,31 @@
+const recipeContainer = document.querySelector('.recipe');
+const timeout = function(s) {
+    return new Promise(function(_, reject) {
+        setTimeout(function() {
+            reject(new Error(`Request took too long! Timeout after ${s} second`));
+        }, s * 1000);
+    });
+};
+// https://forkify-api.herokuapp.com/v2
+//API key 07f5df56-ef85-49d1-a360-8e925fd1c164
+///////////////////////////////////////
+//https://forkify-api.herokuapp.com/api/v2/recipes/:id
+//Api call Recipe
+const showRecipe = async function(id) {
+    try {
+        //Loading Recipe
+        const res = await fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`);
+        const data = await res.json();
+        if (!res.ok) throw new Error(`Problem to fetch data ${data.massage} (${res.status})`);
+        let { recipe  } = data.data;
+        recipe = {
+            id: recipe.id,
+            title: recipe.title
+        };
+        console.log(data);
+    } catch (error) {
+        alert(error);
+    }
+};
+showRecipe('5ed6604591c37cdc054bc886');
+showRecipe('5ed6604591c37cdc054bcc5b');
