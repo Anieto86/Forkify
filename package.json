@@ -1,0 +1,20 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "Recipe App",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index/html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anieto86/frokify.git"
+  },
+  "author": "Alvaro Nieto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anieto86/frokify/issues"
+  },
+  "homepage": "https://github.com/Anieto86/frokify#readme"
+}
